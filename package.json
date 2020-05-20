@@ -1,0 +1,24 @@
+{
+  "name": "skyrimtexoptimizer",
+  "version": "1.0.0",
+  "description": "",
+  "bin": "index.js",
+  "scripts": {
+    "build": "pkg . --targets node12-windows-x64 --output build/skyrimtexoptimizer.exe && node build.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "pkg": {
+    "scripts": "index.js",
+    "assets": "tex*.exe"
+  },
+  "dependencies": {
+    "@ronomon/crypto-async": "^5.0.1",
+    "fast-glob": "^3.2.2",
+    "pkg": "^4.4.8"
+  },
+  "devDependencies": {
+    "adm-zip": "^0.4.14"
+  }
+}
