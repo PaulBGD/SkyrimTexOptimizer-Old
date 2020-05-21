@@ -1,6 +1,8 @@
 const AdmZip = require('adm-zip');
 
+console.log("Zipping..");
+
 const zip = new AdmZip();
-zip.addLocalFile("build/skyrimtexoptimizer.exe");
-zip.addLocalFile("node_modules/@ronomon/crypto-async/binding.node");
-zip.writeZip("build/SkyrimTexOptimizer.zip");
+zip.addLocalFolder("dist/win-unpacked", "data/tools/SkyrimTexOptimizer/");
+zip.addLocalFile("skyrimtexoptimizer.bat", "data/tools/SkyrimTexOptimizer/");
+zip.writeZip("dist/SkyrimTexOptimizer.zip");

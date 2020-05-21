@@ -1,24 +1,35 @@
 {
   "name": "skyrimtexoptimizer",
   "version": "1.0.0",
-  "description": "",
-  "bin": "index.js",
+  "description": "A program for optimizing SSE texture files.",
+  "main": "src/index.js",
   "scripts": {
-    "build": "pkg . --targets node12-windows-x64 --output build/skyrimtexoptimizer.exe && node build.js"
+    "pack": "electron-builder --dir && node build.js",
+    "start": "electron src/index.js"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "pkg": {
-    "scripts": "index.js",
-    "assets": "tex*.exe"
-  },
+  "author": "PaulBGD",
+  "license": "MIT",
   "dependencies": {
-    "@ronomon/crypto-async": "^5.0.1",
-    "fast-glob": "^3.2.2",
-    "pkg": "^4.4.8"
+    "fast-glob": "^3.2.2"
   },
   "devDependencies": {
-    "adm-zip": "^0.4.14"
+    "adm-zip": "^0.4.14",
+    "electron": "^9.0.0",
+    "electron-builder": "^22.6.1"
+  },
+  "build": {
+    "appId": "net.burngames.sto",
+    "files": [
+      "**/src/*",
+      "**/node_modules/fast-glob/*"
+    ],
+    "extraFiles": [
+      "texconv.exe",
+      "texdiag.exe"
+    ],
+    "win": {
+      "target": "portable"
+    }
   }
 }

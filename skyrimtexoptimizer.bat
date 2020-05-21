@@ -1,0 +1,2 @@
+skyrimtexoptimizer.exe %*
+pause
